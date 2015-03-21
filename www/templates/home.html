@@ -1,0 +1,53 @@
+<ion-view view-title="Tip Calculator">
+    <ion-content>
+        <div class="list list-inset"  ng-init="sub_total=100;tax_rate=8.75">
+            <label class="item-input">
+                <span class="input-label">Post-tax Total</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="sub_total" placeholder=100.00 ng-change="show=false">
+                  </span>
+            </label>
+            <label class="item-input">
+                <span class="input-label">Tax Rate (%)</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="tax_rate" placeholder=8.75 ng-change="show=false">
+                  </span>
+            </label>
+            <label class="item-input">
+                <span class="input-label"></span>
+                <button class="button button-calm item-input-wrapper" ng-click="show=true;slide=false;calculate(sub_total, tax_rate)">
+                    Calculate
+                </button>
+            </label>
+
+        </div>
+
+        <div class="item range range-calm" ng-init="rate=15">
+            <i class="icon ion-ios-lightbulb-outline"></i>
+            <input type="range" name="volume" min="0" max="100" step="1" ng-model="rate" ng-change="slide=true;rate_change(rate)">
+            <i class="icon ion-ios-lightbulb"></i>
+        </div>
+
+        <div class="list list-inset" ng-show="show">
+            <div class="item item-divider">
+                Pre-tax total: {{pre_tax.toFixed(2)}},  Tax: {{tax.toFixed(2)}}
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col col-20"><b>Rate</b></div>
+                    <div class="col"><b>Tip</b></div>
+                    <div class="col"><b>Total</b></div>
+                </div>
+                <div class="row" ng-repeat="tip in tips">
+                    <div class="col col-20">{{tip.rate}}%</div>
+                    <div class="col">{{tip.tip}}</div>
+                    <div class="col">{{tip.total}}</div>
+                </div>
+            </div>
+            <div class="item item-divider" ng-show="slide">
+                {{tip.rate}}%: Tip {{tip.tip}},  Total {{tip.total}}
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
