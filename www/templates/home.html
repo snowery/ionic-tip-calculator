@@ -1,13 +1,19 @@
-<ion-view view-title="Tip Calculator">
-    <ion-content>
-        <div class="list list-inset"  ng-init="sub_total=100;tax_rate=8.75">
+<ion-view cache-view="false">
+    <div class="bar bar-header bar-calm">
+        <div class="h1 title">Tip Calculator</div>
+        <button class="button button-clear icon ion-ios-gear" ui-sref="setting"></button>
+    </div>
+
+    <ion-content class="has-header">
+
+        <div class="list list-inset">
             <label class="item-input">
                 <span class="input-label">Post-tax Total</span>
                   <span class="item-input-wrapper">
                       <input type="text" ng-model="sub_total" placeholder=100.00 ng-change="show=false">
                   </span>
             </label>
-            <label class="item-input">
+        <label class="item-input">
                 <span class="input-label">Tax Rate (%)</span>
                   <span class="item-input-wrapper">
                       <input type="text" ng-model="tax_rate" placeholder=8.75 ng-change="show=false">

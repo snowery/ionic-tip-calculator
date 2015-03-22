@@ -1,3 +1,40 @@
 <ion-view view-title="Setting">
-    See
+    <div class="bar bar-header bar-calm">
+        <button class="button button-clear icon-left ion-chevron-left" ui-sref="home">Tip Calculator</button>
+        <div class="h1 title">Setting</div>
+        <button class="button button-clear" ng-click="save(rate)">Done</button>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="list list-inset">
+            <label class="item-input">
+                <span class="input-label">Default Tax Rate (%)</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="rate.tax_rate" placeholder=8.75>
+                  </span>
+            </label>
+
+            <div class="item-input">Default Tip Percentage</div>
+
+            <label class="item-input">
+                <span class="input-label">Fair (%)</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="rate.rate1" placeholder=15>
+                  </span>
+            </label>
+            <label class="item-input">
+                <span class="input-label">Good (%)</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="rate.rate2" placeholder=18>
+                  </span>
+            </label>
+            <label class="item-input">
+                <span class="input-label">Excellent (%)</span>
+                  <span class="item-input-wrapper">
+                      <input type="text" ng-model="rate.rate3" placeholder=20>
+                  </span>
+            </label>
+
+        </div>
+    </ion-content>
 </ion-view>
