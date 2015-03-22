@@ -3,7 +3,7 @@
  */
 app
 .controller('SettingCtrl', ['$scope', 'dao', '$state', function($scope, dao, $state) {
-        console.log("=====In SettingCtrl=====");
+
     dao.get(function(err, data){
         console.log("setting get rate")
         $scope.rate = {

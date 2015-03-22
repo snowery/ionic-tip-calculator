@@ -36,7 +36,6 @@ var app = angular.module('starter', ['ionic', 'ngCordova'])
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
-        console.log("=====Open DB=====");
         // run on chrome browser
         //db = $window.openDatabase("tip_calculator.db",'1.0', 'Offline document storage', 5*1024*1024);
 
@@ -44,6 +43,5 @@ var app = angular.module('starter', ['ionic', 'ngCordova'])
         db = $cordovaSQLite.openDB("tip_calculator.db", 1);
 
         $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS setting (id integer primary key, tax_rate decimal, rate1 decimal, rate2 decimal, rate3 decimal)");
-        console.log("=====End of open db=====");
     });
 })

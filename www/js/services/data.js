@@ -33,7 +33,7 @@ app
 
 // use sqlite plugin
 .factory('dao', function($cordovaSQLite){
-        console.log("=====In service dao=====");
+
     var query = "SELECT tax_rate, rate1, rate2, rate3 FROM setting WHERE id = 1";  // cannot use * here
     var insert = "INSERT INTO setting (tax_rate, rate1, rate2, rate3) VALUES (?,?,?,?)";
     var update = "UPDATE setting SET tax_rate=?, rate1=?, rate2=?, rate3=? WHERE id = 1";

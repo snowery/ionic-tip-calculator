@@ -3,7 +3,7 @@
  */
 app
 .controller('HomeCtrl', ['$scope', '$ionicPlatform', 'dao', function($scope, $ionicPlatform, dao) {
-    console.log("=====In HomeCtrl=====");
+
     $ionicPlatform.ready(function() {
         dao.get(function (err, data) {
             console.log("home get rate");
